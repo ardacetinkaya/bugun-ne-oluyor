@@ -16,6 +16,8 @@ Temel olarak kullanılan teknoloji ve kavram özeti;
 - Azure App Services (Python) Free Plan (Ücretsiz yani...😀)
 
 
+<img src="https://github.com/ardacetinkaya/bugun-ne-oluyor/blob/master/Sample.png" width="800" />
+
 
 - _Python ile haftasonu eğlencesi olsun niteliğinde, öğrenme amaçlı bir hobi projesi niyetine karalanmıştır._
 - _Uzaya roket atmak için geliştirilmiş bir projede değildir_
