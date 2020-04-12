@@ -39,7 +39,7 @@ body {
 
 .footer {
   margin:30px;
-  font-size: 8px;
+  font-size: 10px !important;
   font-style: italic;
 }
 
