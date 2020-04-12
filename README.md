@@ -18,7 +18,8 @@ Temel olarak kullanılan teknoloji ve kavram özeti;
 - BeautifulSoup ile HTML içeriği parse edilir
 - Flask ile basit bir HTTP Request-Response akışı oluşturulur (a.k.a web sitesi)
 
-[__DEMO__](https://bugun-ne-oluyor.azurewebsites.net/)
+
+<a href="https://bugun-ne-oluyor.azurewebsites.net/" target="_blank">DEMO</a>
 
 <img src="https://github.com/ardacetinkaya/bugun-ne-oluyor/blob/master/Sample.png" width="800" />
 
