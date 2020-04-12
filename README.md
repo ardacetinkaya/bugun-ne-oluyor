@@ -1,6 +1,10 @@
 # 🗞 Bugün ne oluyor ?
 
-Haftasonu eğlencesi ve öğrenmesi olarak, bir web sitesi içeriğini basit bir şekilde, __Python__ ile nasıl yorumlayabiliriz bunun karalandığı yere hoş geldiniz. 😀💻
+Haftasonu eğlencesi ve öğrenmesi olarak;
+- Bir web sitesi içeriği basit bir şekilde, __Python__ ile nasıl yorumlanabilir
+- Sonuçlar, nasıl basit bir şekilde web sitesinde gösterilebilir
+
+bunların karalandığı yere hoş geldiniz. 😀💻
 
 Malum, sosyal medyada gündemini tutan ve oluşturan __[ek$isözlük](https://eksisozluk.com)__, bir günün öne çıkan olaylarına ana başlıklar ile ev sahipliği yapıyor. 
 
