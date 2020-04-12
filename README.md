@@ -8,8 +8,10 @@ bunların karalandığı yere hoş geldiniz. 😀💻
 
 Malum, sosyal medyada gündemini tutan ve oluşturan __[ek$isözlük](https://eksisozluk.com)__, bir günün öne çıkan olaylarına ana başlıklar ile ev sahipliği yapıyor. 
 
-- _12 nisan 2020 abc'nin açıkması_
+- _12 nisan 2020 abc'nin acıkması_
+- _7 haziran 2009 muz cumhuriyeti seçimleri_
 - _3 mayıs 1999 xyz'nin bulunması_
+- _18 ekim 2018 üzümbahçesi - beşiksarayı maçı_
 
 Bu tarz başlıkları, derleyip filtreleyerek de o günün sosyal medyadaki özetini çıkarabiliyoruz. Bu özeti çok basit bir HTML içerikle de bir web sitesi olarak sunabiliyoruz. Çok basit ve çok keyifli 😀
  
