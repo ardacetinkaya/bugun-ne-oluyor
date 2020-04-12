@@ -1,6 +1,6 @@
 # 🗞 Bugün ne oluyor ?
 
-Haftasonu eğlencesi ve öğrenmesi olarak;
+Hafta sonu eğlencesi ve öğrenmesi olarak;
 - Bir web sitesi içeriği basit bir şekilde, __Python__ ile nasıl yorumlanabilir
 - Sonuçlar, nasıl basit bir şekilde web sitesinde gösterilebilir
 
