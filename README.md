@@ -15,7 +15,7 @@ Malum, sosyal medyada gündemini tutan ve oluşturan __[ek$isözlük](https://ek
 
 Bu tarz başlıkları, derleyip filtreleyerek de o günün sosyal medyadaki özetini çıkarabiliyoruz. Bu özeti çok basit bir HTML içerikle de bir web sitesi olarak sunabiliyoruz. Çok basit ve çok keyifli 😀
  
-Temel olarak kullanılan teknoloji ve kavram özeti;
+### Temel olarak kullanılan teknoloji ve kavram özeti; ###
 
 - Python 3.7
 - Flask, urlib, BeautifulSoup
@@ -27,7 +27,14 @@ Temel olarak kullanılan teknoloji ve kavram özeti;
 
 <a href="https://bugun-ne-oluyor.azurewebsites.net/" target="_blank">DEMO</a>
 
+### Nasıl çalışıyor ###
+
+`python3 boogn.py `
+
+<img src="https://github.com/ardacetinkaya/bugun-ne-oluyor/blob/master/Sample-1.png" />
+
 <img src="https://github.com/ardacetinkaya/bugun-ne-oluyor/blob/master/Sample.png" width="800" />
+
 
 
 - _Python ile haftasonu eğlencesi olsun niteliğinde, öğrenme amaçlı bir hobi projesi niyetine karalanmıştır._
