@@ -84,11 +84,10 @@ def getEntries(searchKeyword):
                 break
 
             page = page+1
-
-        for entry in entries:
-            print(f"{entry.title}-{entry.postCount}")
-
-        return entries
+        
+        entries.sort(key=lambda x: x.postCount, reverse=True)
+        sortedEntries  = sorted(entries, key=lambda x: x.postCount, reverse=True)
+        return sortedEntries
 
     except Exception as inst:
         print("something wrong")
