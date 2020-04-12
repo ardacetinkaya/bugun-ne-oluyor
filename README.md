@@ -7,13 +7,16 @@ Malum, sosyal medyada gündemini tutan ve oluşturan __[ek$isözlük](https://ek
 - _12 nisan 2020 abc'nin açıkması_
 - _3 mayıs 1999 xyz'nin bulunması_
 
-Bu tarz başlıkları, derleyip filtreleyerek de o günün sosyal medyadaki özetini çıkarabiliyoruz. Bu özeti çok basit bir HTML içerikle de bir web sitesi olarak sunabiliyoruz. Çok basit ve çok keyifli 
+Bu tarz başlıkları, derleyip filtreleyerek de o günün sosyal medyadaki özetini çıkarabiliyoruz. Bu özeti çok basit bir HTML içerikle de bir web sitesi olarak sunabiliyoruz. Çok basit ve çok keyifli 😀
  
 Temel olarak kullanılan teknoloji ve kavram özeti;
 
 - Python 3.7
 - Flask, urlib, BeautifulSoup
-- Azure App Services (Python) Free Plan (Ücretsiz yani...😀)
+- Azure App Services (Python) Free Plan (Ücretsiz yani.😀)
+- urlib ile bir HTTP Request'i yapılır ve sonucu alınır
+- BeautifulSoup ile HTML içeriği parse edilir
+- Flask ile basit bir HTTP Request-Response akışı oluşturulur (a.k.a web sitesi)
 
 
 <img src="https://github.com/ardacetinkaya/bugun-ne-oluyor/blob/master/Sample.png" width="800" />
@@ -24,7 +27,7 @@ Temel olarak kullanılan teknoloji ve kavram özeti;
 - _ek$isozluk'den başlıklar derlenmiştir._
 - _ek$isozluk ile yakından, uzaktan alakası yoktur._
 - _İstenildiği gibi geliştirilebilir, kullanılabilir, atılabilir_
-- _Yapılacak geliştirmeler buradan paylaşılırsa(pr) pandalar yiyecek bambu bulabilir ve insanlar mutlu olabilir_ 
+- _Yapılacak geliştirmeler buradan paylaşılırsa(pr) pandalar(🐼) yiyecek bambu bulabilir ve insanlar mutlu olabilir, ayrıca öğrendiklerimizi paylaşmak güzel..._ 
  
  ### Mutlu kodlamalar ❤️ ###
  
