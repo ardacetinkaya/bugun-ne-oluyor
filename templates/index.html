@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>Noooluyor yaaaa</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/site.css') }}">
+</head>
+
+<body>
+    <span id="forkongithub"><a href="https://github.com/ardacetinkaya/bugun-ne-oluyor">Fork me on GitHub</a></span>
+    <div class="header">
+        <h1>Sanal Dünya'nın gündeminde neler oluyor...</h1>
+        <h3>{{ data.date }}</h3>
+    </div>
+    <div id="container">
+        <ul>
+            {% for item in data.entries %}
+                <li><a class="link" href="{{item.url}}" target="_blank">{{item.title}}</a></li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class="footer">
+        <ul>
+            <li><a class="link" href="https://eksisozluk.com" target="_blank">ek$isozluk</a>'den başlıklar derlenmiştir.</li>
+            <li><a class="link" href="https://eksisozluk.com" target="_blank">ek$isozluk</a> ile yakından, uzaktan alakası yoktur.</li>
+            <li>Python ile haftasonu eğlencesi olsun niteliğinde, öğrenme amaçlı bir hobi projesi niyetine karalanmıştır.</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ url_for('static',filename='scripts/site.js') }}"></script>
+
+</body>
+
+</html>
