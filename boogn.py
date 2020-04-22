@@ -6,11 +6,14 @@ except ImportError:
 
 import sys
 import getopt
+from datetime import date
 import jsons
 import urllib
 from urllib.parse import quote
 import os
 from flask import Flask, render_template, request
+import locale
+
 
 
 class Entry:
@@ -31,12 +34,15 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     try:
-        day = request.args.get('day', '12 Nisan 2020')
+        today = date.today()
+        todayText = today.strftime("%d %B %Y")
+        day = request.args.get('day', str(todayText))
         data = getEntries(day)
-        container = EntryContainer(data,day);
+        container = EntryContainer(data,str(todayText));
         return render_template("index.html", data=jsons.dump(container))
-    except:
-        return render_template("index.html", data=None)
+    except Exception as ex:
+        raise Exception(ex)
+        #return render_template("index.html", data=None)
 
 
 def getEntries(searchKeyword):
@@ -112,5 +118,6 @@ def main(arguments):
 
 
 if __name__ == "__main__":
+    locale.setlocale(locale.LC_TIME, 'tr_TR.UTF-8')
     app.run()
     # main(sys.argv[1:])
