@@ -38,7 +38,7 @@ def index():
         todayText = today.strftime("%d %B %Y")
         day = request.args.get('day', str(todayText))
         data = getEntries(day)
-        container = EntryContainer(data,str(todayText));
+        container = EntryContainer(data,day);
         return render_template("index.html", data=jsons.dump(container))
     except Exception as ex:
         raise Exception(ex)
