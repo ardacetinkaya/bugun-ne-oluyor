@@ -9,6 +9,7 @@ import getopt
 from datetime import date
 import jsons
 import urllib
+from urllib.error import HTTPError
 from urllib.parse import quote
 import os
 from flask import Flask, render_template, request
@@ -22,6 +23,8 @@ class Entry:
         self.url = url
         self.postCount = postCount
         self.date = date
+    def __str__(self) -> str:
+        return self.title + " " + str(self.postCount)
 
 class EntryContainer:
     def __init__(self,entries,date):
@@ -35,14 +38,28 @@ app = Flask(__name__)
 def index():
     try:
         today = date.today()
-        todayText = today.strftime("%d %B %Y")
-        day = request.args.get('day', str(todayText))
+        todayText = today.strftime("%d %B %Y").lstrip("0").replace(" 0", " ")
+        months = {
+            "January": "Ocak",
+            "February": "Şubat",
+            "March": "Mart",
+            "April": "Nisan",
+            "May": "Mayıs",
+            "June": "HAziran",
+            "July": "Temmuz",
+            "August": "Ağustos",
+            "September": "Eylül",
+            "October": "Ekim",
+            "November": "Kasım",
+            "December": "Aralık"
+            }
+        searchQuery = todayText.replace(today.strftime("%B"),months[today.strftime("%B")])
+        day = request.args.get('day', str(searchQuery))
         data = getEntries(day)
-        container = EntryContainer(data,day);
+        container = EntryContainer(data,day)
         return render_template("index.html", data=jsons.dump(container))
     except Exception as ex:
         raise Exception(ex)
-        #return render_template("index.html", data=None)
 
 
 def getEntries(searchKeyword):
@@ -55,7 +72,7 @@ def getEntries(searchKeyword):
 
         while True:
             url = f'https://eksisozluk.com/basliklar/ara?SearchForm.Keywords={searchParameter}&SearchForm.NiceOnly=false&SearchForm.FavoritedOnly=false&SearchForm.SortOrder=Date&p={str(page)}'
-            request = urllib.request.Request(url)
+            request = urllib.request.Request(url,headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.64'})
             response = urllib.request.urlopen(request)
             htmlBytes = response.read()
             htmlStr = htmlBytes.decode("utf8")
@@ -94,7 +111,8 @@ def getEntries(searchKeyword):
         entries.sort(key=lambda x: x.postCount, reverse=True)
         sortedEntries  = sorted(entries, key=lambda x: x.postCount, reverse=True)
         return sortedEntries
-
+    except HTTPError as err:
+        print(f"{err}")
     except Exception as inst:
         print("something wrong")
         print(inst)
@@ -102,22 +120,35 @@ def getEntries(searchKeyword):
 
 
 def main(arguments):
-    try:
-        opts, args = getopt.getopt(arguments, 'd:h', ['date', 'help'])
-    except:
-        print("Check command arguments")
-        print("boogn.py -d <date>")
-        sys.exit(2)
-
-    for opt, arg in opts:
-        if opt == '-h':
-            print("boogn.py -d <date>")
-            sys.exit()
-        elif opt in ("-d", "--date"):
-            getEntries(arg)
-
+    opts, args = getopt.getopt(arguments, 'd:h', ['date', 'help'])
+    if len(opts) == 0:
+        today = date.today()
+        todayText = today.strftime("%d %B %Y").lstrip("0").replace(" 0", " ")
+        months = {
+            "January": "Ocak",
+            "February": "Şubat",
+            "March": "Mart",
+            "April": "Nisan",
+            "May": "Mayıs",
+            "June": "HAziran",
+            "July": "Temmuz",
+            "August": "Ağustos",
+            "September": "Eylül",
+            "October": "Ekim",
+            "November": "Kasım",
+            "December": "Aralık"
+            }
+        searchQuery = todayText.replace(today.strftime("%B"),months[today.strftime("%B")])
+        print(*getEntries(searchQuery), sep = "\n")
+    else:
+        for opt, arg in opts:
+            if opt == '-h':
+                print("boogn.py -d <date>")
+                sys.exit()
+            elif opt in ("-d", "--date"):
+                print(*getEntries(arg), sep = "\n")
 
 if __name__ == "__main__":
-    locale.setlocale(locale.LC_TIME, 'tr_TR.UTF-8')
+    locale.setlocale(locale.LC_TIME, 'en_US.UTF-8')
     app.run()
-    # main(sys.argv[1:])
+    #main(sys.argv[1:])
