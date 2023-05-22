@@ -11,7 +11,7 @@ Jinja2==2.11.3
 jsons==1.1.2
 MarkupSafe==1.1.1
 pycodestyle==2.5.0
-requests==2.23.0
+requests==2.31.0
 six==1.14.0
 soupsieve==2.0
 typish==1.5.3
